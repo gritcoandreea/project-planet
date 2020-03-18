@@ -28,6 +28,8 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-tomcat', version: '2.2.5.RELEASE'
 
 	compileOnly "org.projectlombok:lombok:1.16.16"
+	implementation 'org.projectlombok:lombok:1.18.10'
+	annotationProcessor 'org.projectlombok:lombok:1.18.10'
 }
 
 test {
