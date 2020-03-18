@@ -3,7 +3,9 @@ package ro.project.planet.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Getter
@@ -17,11 +19,12 @@ public class Planet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected long id;
 
+    @NotBlank(message = "Name must not be null!")
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Enumerated(EnumType.STRING)
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private PlanetStatus status;
 

@@ -4,10 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import ro.project.planet.domain.Planet;
-import ro.project.planet.domain.PlanetStatus;
+import ro.project.planet.dto.PlanetCreateDto;
 import ro.project.planet.exception.ServiceException;
 import ro.project.planet.service.PlanetService;
+
+import javax.validation.Valid;
 
 /**
  * Utility class to add data in H2 database.
@@ -26,8 +27,8 @@ public class DataLoader implements CommandLineRunner {
     }
 
     private void createPlanets() throws ServiceException {
-        planetService.savePlanet(Planet.builder().name("Mercur").status(PlanetStatus.TODO).build());
-        planetService.savePlanet(Planet.builder().name("Venus").status(PlanetStatus.TODO).build());
+        planetService.savePlanet(PlanetCreateDto.builder().name("Mercur").build());
+        planetService.savePlanet(PlanetCreateDto.builder().name("Venus").build());
     }
 
 

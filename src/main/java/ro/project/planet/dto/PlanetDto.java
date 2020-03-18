@@ -11,7 +11,7 @@ import ro.project.planet.domain.PlanetStatus;
 public class PlanetDto {
 
     private long id;
-    private String planetName;
+    private String name;
     private PlanetStatus planetStatus;
-    private TeamDto teamDto;
+    private TeamDto team;
 }
